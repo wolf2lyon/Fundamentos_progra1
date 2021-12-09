@@ -1,3 +1,4 @@
+//Funcion que ayuda a pasar todo a mayuscula
 #include<iostream>
 #include<stdlib.h>
 #include<time.h>
