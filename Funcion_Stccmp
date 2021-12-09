@@ -1,0 +1,24 @@
+Funcion strcmp:funciona para darme un varlor de verdad ya sea
+verdadero o falso para comparar carecteres
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+#include<string.h>
+#include<conio.h>
+using namespace std;
+int main ()
+{
+char nombre[20];
+char nombre1[20]="pikachu";
+cout<<"Digita un nombre: "<<endl;
+cin>>nombre;
+if(strcmp(nombre1,nombre)==0)
+{
+	strcpy(nombre,"raichu");
+	cout<<"\n"<<nombre;
+}
+
+getch();
+return 0;
+} 
