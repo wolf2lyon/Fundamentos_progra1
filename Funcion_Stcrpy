@@ -1,0 +1,15 @@
+Funcion strcpy:funciona para traspasar una cadena de caracteres
+a otra.
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+#include<string.h>
+using namespace std;
+int main ()
+{
+char nombre[20];
+strcpy(nombre,"Anonumus");
+cout<<nombre;
+return 0;
+}
