@@ -1,0 +1,18 @@
+#include<math.h>
+#include<string.h>
+#include<conio.h>
+//Funcion ayuda a concatenar dos cadenas de caracteres
+using namespace std;
+int main ()
+{
+char cad1[]="Pikachu ";
+char cad2[]="Evoluciona a Raichu ";
+char cad3[40];
+strcpy(cad3,cad1);//Pikachu
+strcat(cad3,cad2);//Evoluciona a Raichu
+
+cout<<cad3<<endl;
+
+getch();
+return 0;
+}
