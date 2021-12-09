@@ -1,0 +1,39 @@
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+//Funcion strncmp:compara la letra que deseas 
+#include<math.h>
+#include<string.h>
+#include<conio.h>
+using namespace std;
+int main ()
+{
+char cadena1[40];
+char cadena2[40]="Hola que tal ";
+char cadena3[80];
+cout<<"Digite el nombre del usuario "<<endl;
+cin>>cadena1;
+strcpy(cadena3,cadena2);
+strcat(cadena3,cadena1);
+cout<<cadena3;
+strrev(cadena3);
+cout<<endl;
+cout<<cadena3;
+strupr(cadena3);
+cout<<endl;
+cout<<cadena3;
+strlwr(cadena3);
+cout<<endl;
+cout<<cadena3;
+cout<<endl;
+if(strncmp(cadena3,"o",1)==0)
+{
+	strupr(cadena3);
+	cout<<cadena3<<endl;
+}else{
+	cout<<"El nombre no comienza con la letra o ";
+}
+
+getch();
+return 0;
+}
