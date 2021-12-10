@@ -1,0 +1,18 @@
+//Funcion atoi para convertir a numero entero y funcion atof para numero real
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+#include<string.h>
+#include<conio.h>
+using namespace std;
+int main ()
+{
+char cad[]="123.56";
+float numero;
+//numero=atoi(cad);
+numero=atof(cad);
+cout<<numero<<endl;
+getch();
+return 0;
+}
