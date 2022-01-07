@@ -13,7 +13,7 @@ int main() {
 	int i, pos, aux;
 	for(i=0;i<5;i++)
 {
-		pos = 1;
+		pos = i;
 		aux = numeros[ i ];
 		while ((pos > 0) && (numeros[pos - 1] > aux))
 		{
