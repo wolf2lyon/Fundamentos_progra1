@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<iostream>
+#include<conio.h>
+using namespace std;
+//ordenamiento por insercion
+//5,3,4,1,2
+// Si numeroizq>numeroact entonces hay cambio
+
+
+
+int main() {
+	int numeros[] = { 4,2,3,1,5 };
+	int i, j, aux, min;
+	for (i = 0; i < 5; i++)
+	{
+		min = i;
+		for (j = i + 1; j < 5; j++)
+		{
+			if (numeros[j] < numeros[min])
+			{
+				min = j;
+			}
+		}
+		aux = numeros[i];
+		numeros[i] = numeros[min];
+		numeros[min] = aux;
+	}
+	cout << "Orden Ascendent: ";
+	for (i = 0; i < 5; i++)
+	{
+		cout << numeros[i] << " ";
+	}
+	cout << "Orden Descendente: ";
+	for (i = 4; i >= 0; i--)
+	{
+		cout << numeros[i] << " ";
+	}
+	_getch();
+	return 0;
+
+}
