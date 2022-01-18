@@ -1,0 +1,79 @@
+Busqueda Secuencial
+#include<iostream> 
+#include<conio.h>
+
+using namespace std;
+
+int main()
+{
+	int a[] = { 3,4,2,1,5 };
+	int i, dato;
+	char band = 'F';
+
+	dato = 5;
+	i = 0;
+	while ((band == 'F') && (i < 5)) {
+		if (a[i] == dato) {
+			band = 'V';
+		}
+		i++;
+	}
+
+	if (band == 'F') {
+		cout << "El numero a buscar no existe en el arreglo" << endl;
+	}
+	else if (band == 'V') {
+		cout << "El numero a sigo encontrado en la pos: " << i - 1 << endl;
+	}
+	cout << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << a[i] << "|";
+	}
+	_getch();
+	return 0;
+}
+Busqueda Binaria
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main() {
+	int numeros[] = { 1,2,3,4,5 };
+	int inf, sup, mitad, dato;
+	char band = 'F';
+	dato = 4;
+	//Algoritmo de la Busqueda Binaria
+	inf = 0;
+	sup = 5;
+	while (inf <= sup) {
+		mitad = (inf + sup) / 2;
+		if (numeros[mitad] == dato) {
+			band = 'V';
+			break;
+		}
+		if (numeros[mitad] > dato) {
+			sup = mitad;
+			mitad = (inf + sup) / 2;
+		}
+		if (numeros[mitad] < dato) {
+			inf = mitad;
+			mitad = (inf + sup) / 2;
+		}
+
+	}
+
+	if (band == 'V') {
+		cout << "El numero a sido encontrado en la posicion: " << mitad << endl;
+	}
+	else {
+		cout << "El numero NO a sido encontrado" << endl;
+	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << numeros[i] << "|";
+	}
+	_getch();
+	return 0;
+}
