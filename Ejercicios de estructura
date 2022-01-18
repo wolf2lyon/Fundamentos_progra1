@@ -1,0 +1,330 @@
+///Problemas de Struct 
+//Ejercicico de Promedio de alumno
+//Problema 1
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Alumno {
+	char nombre[20];
+	int edad;
+	float promedio;
+}alumnos[3];
+int main() {
+	int pos;
+	float mayor = 0;
+	for (int i = 0; i < 3; i++) {
+		while (getchar() != '\n');
+		cout << i + 1 << " Digite su nombre: "; cin.getline(alumnos[i].nombre, 20, '\n');
+		cout << i + 1 << " Digite su edad: "; cin >> alumnos[i].edad;
+		cout << i + 1 << " Digite su promedio: "; cin >> alumnos[i].promedio;
+		cout << "\n";
+		if (alumnos[i].promedio > mayor){
+		mayor = alumnos[i].promedio;
+		pos = i;
+
+
+
+			}
+
+
+
+	}
+	cout << "\nNombre:" << alumnos[pos].nombre << endl;
+	cout << "Edad: " << alumnos[pos].edad << endl;
+	cout << "Promedio: " << alumnos[pos].promedio << endl;
+
+	_getch();
+	return 0;
+
+
+
+}
+-------------------------------------------------------------------------------------------------------------------------
+//Empleado con mayor y mnenor salario
+//Ejercicio 2
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Empleado {
+	char nombre[20];
+	float salario;
+}emp[100];
+int main() {
+	int n_empleados, posM = 0, posm = 0;
+	float mayor = 0, menor = 99999;
+	cout << "Digite el numero de empleados:";
+	cin >> n_empleados;
+	for (int i = 0; i < n_empleados; i++) {
+		while (getchar() != '\n');
+		cout << i + 1 << " Digite su nombre: ";
+		cin.getline(emp[i].nombre, 20, '\n');
+		cout << i + 1 << " Digite su salario :";
+		cin >> emp[i].salario;
+		if (emp[i].salario > mayor) {
+			mayor = emp[i].salario;
+			posM = i;
+		}
+		if (emp[i].salario < menor) {
+			menor = emp[i].salario;
+			posm = i;
+		}
+		cout << "\n";
+
+	}
+	cout << "\n.:Datos del empelado con mayor salario: \n";
+	cout << "Nombre: "<<emp[posM].nombre<<endl;
+		cout << "Salario:" <<emp[posM].salario<<endl;
+
+		cout << "\n Datos del empleado con menor salario\n";
+	cout << "Nombre: " << emp[posm].nombre << endl;
+	cout << "Salario: " << emp[posm].salario << endl;
+	_getch();
+	return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+//Ejercicio 3
+//Mayor numero de Medallas
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct atleta {
+	char nombre[20];
+	char pais[20];
+	int numero_medallas;
+}atletas[100];
+
+
+int main() {
+	int nAtletas, mayor = 0, pos;
+	cout << "Digite el numero de Atletas: ";
+	cin >> nAtletas;
+	for (int i = 0; i < nAtletas; i++)
+	{
+		while (getchar() != '\n');
+		cout << i + 1 << " Digite su nombre: "; cin.getline(atletas[i].nombre, 20, '\n');
+		cout << i + 1 << " Digite su pais:" ;cin.getline(atletas[i].pais,20,'\n');
+			cout << i + 1 << " Ditie el numero de medallas: "; cin >> atletas[i].numero_medallas;
+		cout << "\n";
+		if (atletas[i].numero_medallas > mayor) {
+			mayor = atletas[i].numero_medallas;
+			pos = i;
+		}
+
+
+
+	}
+	//Imprimiendo los datos del mejor atleta
+	cout << "Nombre: " << atletas[pos].nombre << endl;
+	cout << "Pais: " << atletas[pos].pais << endl;
+
+
+
+	_getch();
+	return 0;
+}
+
+-------------------------------------------------------------------------------------
+//Estructuras anidadas promedio
+//Ejercicio 5
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Promedio {
+	float nota1;
+	float nota2;
+	float nota3;
+};
+struct Alumno {
+	char nombre[20];
+	char sexo[10];
+	int edad;
+	struct Promedio prom;
+}alumno1;
+
+int main() {
+	float promedio_alumno;
+	cout << "Digite su nombre: ";
+	cin.getline(alumno1.nombre, 20, '\n');
+	cout << "Digite su sexo: ";
+	cin.getline(alumno1.sexo, 10, '\n');
+	cout << "Digite su edad :";
+	cin >> alumno1.edad;
+
+	cout << "\n.:Notas del Alumno:.\n";
+	cout << "Nota1: "; cin >> alumno1.prom.nota1;
+	cout << "Nota2: "; cin >> alumno1.prom.nota2;
+	cout << "Nota3: "; cin >> alumno1.prom.nota3;
+
+	promedio_alumno = (alumno1.prom.nota1 + alumno1.prom.nota2 + alumno1.prom.nota3) / 3;
+	cout << "\nDatos del Alumno\n";
+	cout << "Nombre: " << alumno1.nombre << endl;
+	cout << "Sexo: " << alumno1.sexo << endl;
+	cout << "Edad: " << alumno1.edad << endl;
+	cout << "Promedio:" << promedio_alumno << endl;
+
+	_getch();
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------
+//Mayor promediio de los alumnos 
+//Ejecicio 6
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Promedio {
+	float nota1;
+	float nota2;
+	float nota3;
+};
+struct Alumno {
+	char nombre[20];
+	char sexo[10];
+	int edad;
+	struct Promedio prom;
+}alumnos[100];
+int main() {
+	int numero_alumnos, posM;
+	float promedio_alumnos[100], mayor = 0.0;
+	cout << "Digites el numero de alumnos: ";
+	cin >> numero_alumnos;
+	for (int i = 0; i < numero_alumnos; i++) {
+		while (getchar() != '\n');
+		cout << i + 1 << " Digite su nombre: "; cin.getline(alumnos[i].nombre, 20, '\n');
+		cout << i + 1 << " Digite su sexo: "; cin.getline(alumnos[i].sexo, 10, '\n');
+		cout << i + 1 << " Digite su edad: "; cin >> alumnos[i].edad;
+
+
+		cout << "Ahora,vamos a pedir las notas: \n";
+		cout << "Digite la primera nota: "; cin >> alumnos[i].prom.nota1;
+		cout << "Digite la segunda nota: "; cin >> alumnos[i].prom.nota2;
+		cout << "Digite la tercera nota: "; cin >> alumnos[i].prom.nota3;
+
+		//vamos a sacar el promedio del alumno
+		promedio_alumnos[i] = (alumnos[i].prom.nota1 + alumnos[i].prom.nota2 + alumnos[i].prom.nota3) / 3;
+		if (promedio_alumnos[i] > mayor) {
+
+			mayor = promedio_alumnos[i];
+			posM = i;
+		}
+
+	}
+
+	cout << "\nMostrando los datos del alumno con mejor promedio" << endl;
+	cout << "Nombre: " << alumnos[posM].nombre << endl;
+	cout << "Sexo: " << alumnos[posM].sexo << endl;
+	cout << "Edad: " << alumnos[posM].edad << endl;
+	cout << "Promedio: " << promedio_alumnos[posM] << endl;
+
+	_getch();
+	return 0;
+}
+----------------------------------------------------------------------------
+
+//Ejercicio 7
+//Estructura de tiempo
+
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+struct Tiempo {
+	int horas;
+	int minutos;
+	int segundos;
+
+}et[100];
+int main() {
+	
+	int n_etapas, horasT = 0, minutosT = 0, segundosT = 0;
+	cout << "Digite el numero de etapas: ";
+	cin >> n_etapas;
+	for (int i = 0; i < n_etapas; i++)
+		{
+		//Pidiendo los datos al usuario
+		cout << "Horas: "; cin >> et[i].horas;
+		cout << "Minutos: "; cin >> et[i].minutos;
+		cout << "Segundos: "; cin >> et[i].segundos;
+		horasT = horasT + et[i].horas;
+		minutosT = minutosT + et[i].minutos;
+		if (minutosT >= 60) {
+			minutosT -= 60;
+			horasT++;
+		}
+			segundosT = segundosT + et[i].segundos;
+			if (segundosT >= 60) {
+
+				segundosT -= 60;
+				minutosT++;
+			}
+
+		}
+
+cout << "\nTiempo total empleado\n";
+cout << "Horas: " << horasT << endl;
+cout << "Minutos: " << minutosT << endl;
+cout << "Segundos: " << segundosT << endl;
+
+
+
+
+
+
+
+_getch();
+
+return 0;
+-----------------------------------------------------------------------------------------	
+}
+//Ejercicio 8
+//Estructura de discapacitados
+#include<iostream>
+#include<conio.h>
+#include<string.h>
+using namespace std;
+struct Persona {
+	char nombre[30];
+	bool discapacidad;
+
+
+
+}personas[100], personasSinD[100], personasConD[100];
+//personasSinF= personas sin discapacidad
+//personasConD= personas con discapacidad
+int main() {
+	int numeros_personas, j = 0, k = 0;
+	cout << "Digite el numero de personas: ";
+	cin >> numeros_personas;
+	for (int i = 0; i < numeros_personas; i++)
+	{
+		while (getchar() != '\n');
+		cout << "Digite su nombre: "; cin.getline(personas[i].nombre, 30, '\n');
+		cout << "La persona tiene discapcidad(1/0): "; cin >> personas[i].discapacidad;
+		//Almacenando personas con discapacidad
+		if (personas[i].discapacidad == 1) {
+			strcpy_s(personasConD[j].nombre, personas[i].nombre);
+			j++;
+		}
+		else {
+			strcpy_s(personasSinD[k].nombre, personas[i].nombre);
+			k++;
+		}
+	}
+	cout << "Mostrar las personas sin Discapacidad:\n";
+	for (int i = 0; i < k; i++) {
+		cout << personasSinD[i].nombre << endl;
+	}
+	cout << "\nMostrando las personas con Discapacidad:\n";
+	for (int i= 0; i < j; i++)
+	{
+		cout << personasConD[i].nombre << endl;
+	}
+
+
+
+
+	_getch();
+	return 0;
+}
