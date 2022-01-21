@@ -1,0 +1,1129 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+//Prototipo de funcion
+int encontrarMax(int x, int y);
+
+
+int main() {
+	int n1, n2;
+	int mayor;
+	cout << "Digite 2 numeros : ";
+	cin >> n1 >> n2;
+
+	mayor = encontrarMax(n1, n2);
+
+	cout << "El mayor de los 2 numeros es; " << mayor << endl;
+
+
+
+
+
+
+	_getch();
+	return 0;
+
+}
+//Definicion de Funcion
+int encontrarMax(int x, int y)
+{
+	int numMax = x;
+	if (x > y) {
+		numMax = x;
+	}
+	else {
+		numMax = y;
+	}
+	return numMax;
+}
+-----------------------------------------------
+/*Plantilla de Funcion
+Ejemplo:Sacar el valor absoluto de un numero */
+#include<iostream>
+#include<conio.h>
+using namespace std;
+//Prototipo de Funcion
+template<class TIPOD>
+void mostrarAbs(TIPOD numero);
+int main() {
+	int num1 = -4;
+	float num2 = -56.67;
+	double num3 = -123.5678;
+	mostrarAbs(num1);
+	mostrarAbs(num2);
+	mostrarAbs(num3);
+
+
+
+
+	_getch();
+		return 0;
+}
+
+
+template<class TIPOD>
+void mostrarAbs(TIPOD numero) {
+	if (numero < 0) {
+		numero = numero * -1;
+	}
+	cout << "El valor absoluto del numero es: " << numero<<endl;
+}
+-----------------------------------------------
+//Ejercicio 1
+#include<iostream>
+#include<conio.h>
+using namespace std;
+//Prototipo de Funciones
+void pedirDatos();
+void mult(float x,float y);
+float num1,num2;
+int main(){
+	pedirDatos();
+	mult(num1,num2);
+	
+
+
+
+_getch();
+return 0;
+}
+void pedirDatos(){
+	cout<<"Digite 2 numeros: ";
+	cin>>num1>>num2;	
+}
+void mult(float x,float y){
+	float multiplicacion = x*y;
+	cout<<"La multiplicacion es :"<<multiplicacion<<endl;
+
+}
+-----------------------------------------------
+//Ejercicio 2
+//Cuadrado de un Numero
+#include<iostream>
+#include<conio.h>
+using namespace std;
+//Prototipo de Funciones
+void pedirDatos();
+void al_cuadrado(float n);
+
+float numero;
+int main(){
+
+	pedirDatos();
+	al_cuadrado(numero);
+
+
+
+	_getch();
+	return 0;
+}
+void pedirDatos(){
+	cout<<"Digite un numero: " ;
+	cin>>numero;
+}
+void al_cuadrado(float n){
+	float elevacion;
+	elevacion = n*n;
+cout<<"El numero al cuadrado es: "<<elevacion<<endl;
+
+
+}
+-----------------------------------------------
+//Ejerccicioi 3 
+//Elevacion de un numero
+
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+//Prototipos de Funciones
+void pedirDatos();
+void funpot(int x, int y);
+int numero, exponente;
+int main() {
+	pedirDatos();
+	funpot(numero, exponente);
+	_getch();
+	return 0;
+}
+void pedirDatos() {
+	cout << "Digite un numero: ";
+	cin >> numero;
+	cout << "Digite el exponente de elevacion: ";
+	cin >> exponente;
+
+}
+void funpot(int x, int y) {
+	long resultado=1;
+	for (int i = 1; i <= y; i++)
+	{
+		resultado *= x;
+
+	}
+
+	cout << "El resultado es: " << resultado << endl;
+
+
+
+}
+-----------------------------------------------
+//Ejercicio 4
+//Ejercicio parte decimal
+#include<iostream>
+#include<conio.h>
+using namespace std;
+float num;
+void parteDecimal();
+void pedirDatos();
+
+int main() {
+
+	pedirDatos();
+	parteDecimal();
+
+	_getch();
+	return 0;
+}
+
+
+
+
+
+
+void pedirDatos() {
+	cout << "Introduzca el numero : ";
+		cin>> num;
+
+
+
+}
+void parteDecimal() {
+	int numEnt;
+	numEnt = int(num);
+	cout << "La parte decimal es :" << num - numEnt << endl;
+}
+
+-----------------------------------------------
+//Ejercicio 5
+//Enviando datos a una plantilla
+#include<iostream>
+#include<conio.h>
+using namespace std;
+template <class TIPOD>
+void despliegue(TIPOD dato);
+int main(){
+	int dato1=4;
+	float dato2= 15.67;
+	double dato3= 567.7890;
+	char dato4='a';
+	despliegue(dato1);
+	despliegue(dato2);
+	despliegue(dato3);
+	despliegue(dato4);
+
+
+
+
+_getch();
+return 0;
+}
+
+template <class TIPOD>
+void despliegue(TIPOD dato){
+	cout<<"El dato es: " <<dato<<endl;
+}
+-----------------------------------------------
+//Ejercicio 6
+//Maximo de tres valores
+#include<iostream>
+#include<conio.h>
+using namespace std;
+template<class T>
+T maximo(T dato1, T dato2, T dato3);
+
+
+
+
+
+int main() {
+	float dato1 = 4.56, dato2 = 6.67, dato3 = 3.56;
+	cout << "El maximo valor es: " << maximo(dato1, dato2, dato3) << endl;
+
+
+	_getch();
+	return 0;
+}
+template<class T>
+T maximo(T dato1, T dato2, T dato3)
+{
+	T max;
+	if ((dato1 >= dato2) && (dato1 >= dato3)) {
+		max = dato1;
+	}
+	else {
+		if ((dato2 >= dato1) && (dato2 >= dato3)) {
+		max = dato2;
+	}
+		else {
+			if ((dato3 > dato1) && (dato3 > dato2)) {
+				max = dato3;
+			}
+		}
+		
+	}
+	return max;
+
+
+}
+-----------------------------------------------
+// Paso por parametros por Referencia
+#include<iostream>
+#include<conio.h>;
+using namespace std;
+
+void valNuevo(int&, int&);
+int main() {
+	int num1, num2;
+	cout << "Digite 2 numeros: ";
+	cin >> num1 >> num2;
+	valNuevo(num1, num2);
+	_getch();
+	return 0;
+
+
+}
+void valNuevo(int& xnum, int& ynum) {
+	cout << "El valor del primer numero es: " << xnum << endl;
+	cout << "El valor del segundo numero es: "<< ynum << endl;
+	xnum = 89;
+	ynum = 45;
+
+	cout << "El nuevo valor del primer numero es: " << xnum << endl;
+	cout << "El nuevo valor del segundo numero es: "<< ynum << endl;
+
+
+
+}
+-----------------------------------------------
+//Ejercicio 7
+//Intercambiar valores de 2 variables con paso
+// por referencia
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void intercambiar(int &,int&);
+int main(){
+	int num1=10,num2=15;
+	cout<<"El valor de num1 es: " <<num1<<endl;
+	cout<<"El valor de num2 es: "<<num2<<endl;
+	intercambiar(num1,num2);
+	cout<<"\nEl nuevo valor de num1 es: "<<num1<<endl;
+	cout<<"El nuevo valor de num2 es: "<<num2<<endl;
+	
+
+
+_getch();
+return 0;
+}
+void intercambiar(int& num1, int& num2){
+	int aux;
+	aux=num1;
+	num1=num2;
+	num2=aux;
+}
+-----------------------------------------------
+//Ejercicio 8
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+void cambio(int,int&,int&,int&,int&,int&,int&);
+int main()
+{
+	int valor,cien,cincuenta,veinte,diez,cinco,uno;
+	cout<<"Digite la cantidad en dolares: ";
+	cin>>valor;
+	cambio(valor,cien,cincuenta,veinte,diez,cinco,uno);
+
+	cout<<"Cantidad de billetes a entregar como cambio: "<<endl;
+	cout<<"Cien: "<<cien<<endl;
+	cout<<"Cincuenta: "<<cincuenta<<endl;
+	cout<<"Veinte: " <<veinte<<endl;
+	cout<<"Diez: " << diez << endl;
+	cout<<"Cinco: " <<cinco<<endl;
+	cout<<"Uno: "<<uno<<endl;
+
+
+	_getch();
+	return 0;
+}
+void cambio(int valor, int& cien,int& cincuenta,int& veinte, int& diez,int& cinco,int& uno)
+{
+
+cien=valor/100;
+valor= valor %100;
+valor%=100;
+cincuenta=valor/50;
+valor %=50;
+veinte =valor/20;
+valor%=20;
+diez =valor/10;
+valor %=10;
+cinco =valor/5;
+uno=valor%5;
+
+}
+-----------------------------------------------
+//Ejercicio 9
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+void tiempo(int, int&, int&, int&);
+void imprimir();
+int totalSeg, horas, minu, seg;
+
+int main() {
+	imprimir();
+
+
+
+
+
+	_getch();
+	return 0;
+}
+void tiempo(int totalSeg, int& horas, int& min, int& seg) {
+
+
+	horas = totalSeg / 3600;
+	totalSeg %= 3600;
+	minu = totalSeg / 60;
+	seg = totalSeg % 60;
+}
+void imprimir() {
+	cout << "Digite el numero total de segundos: ";
+	cin >> totalSeg;
+	tiempo(totalSeg, horas,minu, seg);
+	cout << "\nTiempo equivalente a la cantidad de segundos digitados: " << endl;
+	cout << "Horas: " << horas << endl;
+	cout << "Minutos: " << minu << endl;
+	cout << "Segundos: " << seg << endl;
+
+}
+
+-----------------------------------------------
+//Ejercicio 10
+//Fecha actual dependiendo en numero de dias
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void calc_anios(int,int&,int&,int&);
+
+
+
+int main(){
+	int totalDias,anio,mes,dia;
+	cout<<"Digite el numero total de dias: ";
+	cin>>totalDias;
+	
+
+	calc_anios(totalDias,anio,mes,dia);
+	cout<<"Fecha Actual: " <<dia+1<<"/"<<mes+1<<"/"<<anio+2000<<endl;
+
+
+
+
+
+
+_getch();
+return 0;
+}
+void calc_anios(int totalDias,int& anio,int& mes,int& dia){
+	anio=totalDias/365;
+	totalDias %=365;
+	mes=totalDias/30;
+	dia=totalDias%30;
+
+} 
+
+-----------------------------------------------
+//Paramatros tipo vector
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+void cuadrado(int vec[], int);
+void muestra(int vec[], int);
+
+
+
+
+int main() {
+	const int TAM = 5;
+	int vec[TAM] = { 1,2,3,4,5 };
+	cuadrado(vec, TAM);
+	muestra(vec, TAM);
+
+
+
+
+	_getch();
+	return 0;
+}
+
+void cuadrado(int vec[], int tam) {
+	for (int i = 0; i < tam; i++)
+	{
+		vec[i] *= vec[i];
+
+	}
+
+
+
+}
+void muestra(int vec[], int tam)
+{
+	for (int i = 0; i < tam; i++)
+	{
+		cout << vec[i] << " ";
+	}
+
+}
+-----------------------------------------------
+//Ejercicio 11 Suma de elementos de un vector
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void pedirDatos();
+int calcularSuma(int vec[],int);
+
+
+int vec[100],tam;
+int main(){
+	pedirDatos();
+	cout<<"\nLa suma de los elementos del vector es: "<<calcularSuma(vec,tam)<<endl;
+ 
+
+_getch();
+return 0;
+}
+void pediDatos(){
+	cout<<"Digite el numero de elementos de un vector: ";
+	cin>>tam;
+	for(int i=0;i<tam;i++){
+		cout<<i+1<<".Digite un numero: ";
+		cin>>vec[i];
+	
+}
+}
+int calcularSuma(int vec[],int tam){
+	
+	int suma=0;
+	for(int i=0;i<tam;i++)
+{
+	suma+=vec[i];
+}
+	return suma;
+}
+-----------------------------------------------
+//Ejercicio 12 
+//Comprobar si un arreglo esta ordenado
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void pedirDatos();
+void comprobarOrdenamiento(int vec[], int);
+int vec[100], tam;
+int main() {
+	pedirDatos();
+	comprobarOrdenamiento(vec, tam);
+
+
+	_getch();
+	return 0;
+}
+
+void pedirDatos() {
+	cout << "Digite el numero de elementos del vector: ";
+	cin >> tam;
+	for (int i = 0; i < tam; i++) {
+		cout << i + 1 << ".Digite el numero del vector :";
+		cin >> vec[i];
+	}
+}
+void comprobarOrdenamiento(int vec[], int tam){
+
+char band = 'F';
+// 6 1 3 4 5
+int i = 0;
+while ((band == 'F') && (i < tam - 1)) {
+	if (vec[i] > vec[i + 1]) {
+		band = 'V';
+	}
+	i++;
+}
+
+if (band == 'F') {
+	cout << "El arreglo esta ordenado Crecientemente";
+}
+else {
+	cout << "El arrelgo NO esta ordenado";
+}
+
+}
+--------------------------------------------------
+//Ejercicio 13
+//Cambiando signo de elementos de un vector
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void pedirDatos();
+void cambiarSigno(int vec[],int);
+void mostrarVector(int vec[],int);
+int vec[100],tam;
+
+int main(){
+	pedirDatos();
+	cambiarSigno(vec,tam);
+	mostrarVector(vec,tam);
+
+
+_getch();
+return 0;
+}
+void pedirDatos(){
+
+	cout<<"Digite el tamanio del vector: ";
+	cin>>tam;
+
+
+	for(int i=0;i<tam;i++){
+	cout<<i+1<<".Digite un numero: ";
+	cin>>vec[i];
+}
+
+}
+void cambiarSigno(int vec[],int tam){
+
+	for(int i=0;i<tam;i++){
+	vec[i]*=-1;
+}
+
+}
+void mostrarVector(int vec[],int tam){
+	cout<<"\nMostrando los elementos del vector con signo cmabiado\n";
+	for(int i=0;i<tam;i++){
+
+		cout <<vec[i]<<" ";
+}
+
+
+}
+
+--------------------------------------------------
+//Ejercicio 14
+//Elementos impares de un vector
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+void pedirDatos();
+void impares(int ve[], int);
+int vec[100], tam;
+
+int main() {
+
+	pedirDatos();
+	impares(vec, tam);
+
+
+	_getch();
+	return 0;
+}
+void pedirDatos() {
+	cout << "Digite el tamanio del vector: ";
+	cin >> tam;
+
+	for (int i = 0; i < tam; i++) {
+		cout << i + 1 << ".Digite un numero: ";
+		cin >> vec[i];
+
+	}
+}
+void impares(int vec[], int tam) {
+
+	int vecImpares[100];
+	int j = 0;
+	//1 2 3 4 5
+	for (int i = 0; i < tam; i++) {
+		if (vec[i] % 2 != 0) {
+
+			vecImpares[j] = vec[i];
+			j++;
+
+		}
+	}
+	cout << "\nImprimiendo los elementos impares del vector: \n";
+	for (int i = 0; i < j; i++) {
+		cout << vecImpares[i] << " ";
+
+	}
+}
+--------------------------------------------------
+//Paso de parametro de tipo matriz
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void mostrarMatriz(int m[][3], int, int);
+void calcularCuadrado(int m[][3], int, int);
+void mostrarMatrizElevada(int m[][3], int, int);
+
+
+int main() {
+	const int NFilas = 2;
+	const int NCol = 3;
+	int m[NFilas][NCol] = { {1,2,3},{4,5,6} };
+	mostrarMatriz(m, NFilas, NCol);
+	calcularCuadrado(m, NFilas, NCol);
+	mostrarMatrizElevada(m, NFilas, NCol);
+	_getch();
+	return 0;
+}
+void mostrarMatriz(int m[][3], int nfilas, int ncol) {
+
+	cout << "Mostrando matriz original:\n";
+	for (int i = 0; i < nfilas; i++) {
+		for (int j = 0; j < ncol; j++) {
+
+			cout << m[i][j] << " ";
+		}
+
+		cout << "\n";
+
+	}
+
+
+
+}
+void calcularCuadrado(int m[][3], int  nfilas, int ncol) {
+	for (int i = 0; i < nfilas; i++) {
+		for (int j = 0; j < ncol; j++) {
+			m[i][j] *= m[i][j];
+
+		}
+	}
+
+}
+void mostrarMatrizElevada(int m[][3], int nfilas, int ncol) {
+	for (int i = 0; i < nfilas; i++) {
+		for (int j = 0; j < ncol; j++) {
+			cout << m[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+}
+--------------------------------------------------
+//Ejercicio 15
+//Determinar si una matriz es simetrica con funcion
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void pedirDatos();
+void comprobarSimetria(int m[][100], int, int);
+int m[100][100], nfilas, ncol;
+
+int main() {
+	pedirDatos();
+	comprobarSimetria(m, nfilas, ncol);
+
+
+
+	_getch();
+	return 0;
+}
+void pedirDatos() {
+	cout << "Digite el numero de filas: ";
+	cin >> nfilas;
+	cout << "Digite el numero de columnas: ";
+	cin >> ncol;
+	for (int i = 0; i < nfilas; i++) {
+		for (int j = 0; j < ncol; j++) {
+			cout << "Digite un numero [" << i << "][" << j << "]: ";
+			cin >> m[i][j];
+		}
+	}
+}
+void comprobarSimetria(int m[][100], int nfilas, int ncol) {
+	int cont = 0;
+	if (nfilas == ncol) {
+		for (int i = 0; i < nfilas; i++) {
+			for (int j = 0; j < ncol; j++) {
+				if (m[i][j] == m[j][i]){
+				cont++;
+					}
+
+			}
+
+
+		}
+	}
+
+	if (cont == nfilas * ncol) {
+		cout << "La matriz es Simetrica";
+	}
+	else {
+		cout << "La matriz no es Simetrica";
+	}
+}
+--------------------------------------------------
+//Ejercicio 16 
+//Menor elemento de una filda de la matriz
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int m[100][100], nfilas, ncol;
+void pedirDatos();
+int comprobarMenorElemento(int m[][100], int, int);
+int main() {
+	pedirDatos();
+	cout << "\nEl menor elemento es: " << comprobarMenorElemento(m, nfilas, ncol);
+
+
+
+	_getch();
+	return 0;
+}
+void pedirDatos() {
+
+	cout << "Digite el numero de filas: ";
+	cin >> nfilas;
+	cout << "Digite el numero de columnas: ";
+	cin >> ncol;
+
+	for (int i = 0; i < nfilas; i++) {
+		for (int j = 0; j < ncol; j++) {
+			cout << "Digite un numero[" << i << "][" << j << "]: ";
+			cin >> m[i][j];
+		}
+	}
+
+
+}
+int comprobarMenorElemento(int m[][100], int nfilas, int ncol) {
+	int fila, menor = 9999;
+	cout << "\nDigite un numero de fila para comprobar menor elemento: ";
+	cin >> fila;
+
+	for (int i = 0; i < nfilas; i++) {
+		for (int j = 0; j < ncol; j++) {
+			if (i == fila) {
+
+				if (m[i][j] < menor) {
+					menor = m[i][j];
+
+
+				}
+			}
+
+		}
+	}
+
+
+	return menor;
+}
+
+--------------------------------------------------
+//Paso de parametros de tipo estructura
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Persona{
+	char nombre[30];
+	int edad;
+
+}p1;
+//Prototipo
+void pedirDatos();
+void mostrarDatos(Persona);
+int main(){
+	pedirDatos();
+	mostrarDatos(p1);
+
+	_getch();
+	return 0;
+}
+void pedirDatos(){
+	cout<<"Digite su nombre: ";
+	cin.getline(p1.nombre,30,'\n');
+	cout<<"Digite su edad: ";
+	cin>>p1.edad;
+
+
+}
+void mostrarDatos(Persona p){
+	cout<<"\n\nNombre: "<<p.nombre<<endl;
+	cout<<"Edad : " <<p.edad<<endl;
+
+}
+--------------------------------------------------
+//Ejercicio 17
+//Sumar numeros complejos
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Complejo {
+	float real, imaginaria;
+
+}z1, z2;
+//Prototipo de Funcion
+void pedirDatos();
+Complejo suma(Complejo, Complejo);
+void muestra(Complejo);
+int main() {
+	pedirDatos();
+	Complejo x = suma(z1, z2);
+	muestra(x);
+
+
+	_getch();
+	return 0;
+}
+void pedirDatos() {
+	cout << "Digite los datos para el primer  numero Compleja: " << endl;
+	cout << "Parte real: "; cin >> z1.real;
+	cout << "Parte imaginaria: "; cin >> z1.imaginaria;
+
+	cout << "\nDigite los datos para el segundo numero Complejo: " << endl;
+	cout << "Parte Real: "; cin >> z2.real;
+	cout << "Parte Imaginaria: "; cin >> z2.imaginaria;
+
+}
+Complejo suma(Complejo z1, Complejo z2) {
+	z1.real += z2.real;
+	z1.imaginaria += z2.imaginaria;
+	return z1;
+
+}
+void muestra(Complejo x) {
+	cout << "\nResultado de la suma : " << x.real << " , " << x.imaginaria << endl;
+
+}
+--------------------------------------------------
+//Ejercicio 18
+//Calcular Fecha mas reciente
+#include<iostream>
+#include<conio.h>
+using namespace std;
+struct Fecha {
+	int dia, mes, anio;
+}f1, f2;
+
+
+//Prototipo de Funcion
+void pedirDatos();
+Fecha mayor(Fecha, Fecha);
+void muestra(Fecha);
+
+int main() {
+	pedirDatos();
+
+	Fecha x = mayor(f1, f2);
+
+	muestra(x);
+
+
+
+	_getch();
+	return 0;
+}
+void pedirDatos() {
+	cout << "Digite la primera fecha: " << endl;
+	cout << "Dia: "; cin >> f1.dia;
+	cout << "Mes: "; cin >> f1.mes;
+	cout << "Anio: "; cin >> f1.anio;
+
+	cout << "\nDigite la segunda fecha: " << endl;
+	cout << "Dia: "; cin >> f2.dia;
+	cout << "Mes: "; cin >> f2.mes;
+	cout << "Anio: "; cin >> f2.anio;
+
+
+
+
+}
+Fecha mayor(Fecha f1, Fecha f2) {
+	Fecha mayorFecha;
+
+	if ((f1.anio >= f2.anio) && (f1.mes >= f2.mes) && (f1.dia >= f2.dia)) {
+		mayorFecha = f1;
+	}
+	else {
+		mayorFecha = f2;
+	}
+	return mayorFecha;
+}
+void muestra(Fecha x) {
+	cout << "\nLa fecha masa recien es: " << x.dia << "/" << x.mes << "/" << x.anio << endl;
+}
+--------------------------------------------------
+//Recursividad Factorial de un numero
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+int factorial(int);
+
+
+
+int main(){
+
+	cout<<factorial(3)<<endl;
+
+	_getch();
+	return 0;
+}
+int factorial(int n){
+	if(n==0){
+	//Caso Base
+	n=1;
+}
+ else{
+//Caso general
+	n=n*factorial(n-1);
+
+}
+
+	return n;
+}
+--------------------------------------------------
+//Ejercicio 19
+//Suma de los enteros positivos
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int sumar(int);
+int main(){
+	int nElementos;
+
+	do{
+	cout<<"Digite el numero de elementos: ";
+	cin>>nElementos;
+
+
+}while(nElementos <=0);
+cout<<"\nLa suma es: " << sumar(nElementos)<<endl;
+
+_getch();
+return 0;
+}
+//Funcion Recusiva
+int sumar(int){
+	int suma=0;
+	if(n==1){
+	suma=1
+}else{
+	suma=n+sumar(n-1);
+}
+
+}
+--------------------------------------------------
+//Ejercicio 20
+//Serie Fibonacci
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int fibonacci(int);
+int main() {
+	int nElementos;
+	do {
+		cout << "Digite el numero de elementos: ";
+		cin >> nElementos;
+	} while (nElementos <= 0);
+
+	cout << "\nSerie Fibonacci: ";
+	for (int i=0; i < nElementos; i++) {
+
+		cout << fibonacci(i) << " , ";
+
+	}
+
+	_getch();
+	return 0;
+}
+int fibonacci(int n){
+	if (n < 2) {
+		return n;
+	}
+	else {
+		return fibonacci(n - 1) + fibonacci(n - 2);
+	}
+
+
+}
+--------------------------------------------------
+//Ejercicio 21
+//Elevacion de un numero a un exponente con recusividad
+#include<iostream>
+#include<conio.h>
+using namespace std;
+//Prototipo de funcion
+int potencia(int, int);
+
+int main() {
+	int base, exponente;
+	//Pedir datos al usuario
+	cout << "Digite la bases: "; cin >> base;
+	cout << "Digite el exponente: "; cin >> exponente;
+	cout << "\nPotencia de " << base << "  elevado a  " << exponente << "  es : " << potencia(base, exponente) << endl;
+
+	_getch();
+	return 0;
+}
+int potencia(int x, int y) {
+	int pot;
+	if (y == 1) {//Caso base
+		pot=x;
+	}
+	else {//Caso general
+		pot = x * potencia(x, y - 1);
+	}
+	return pot;
+
+}
+--------------------------------------------------
+//Ejercicio 22
+//Mostrando numero de inicio a fin
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int escribeNumeros(int, int);
+int main() {
+
+	int ini, fin;
+	cout << "Digite un inicio: "; cin >> ini;
+	cout << "Digite un final: "; cin >> fin;
+
+	for (int i=ini; i <= fin; i++)
+	{
+		cout << escribeNumeros(i, fin)<<" ";
+	}
+	_getch();
+	return 0;
+}
+int escribeNumeros(int ini, int fin) {
+
+	if (ini == fin) {
+		return ini;
+	}
+	else {
+		return escribeNumeros(ini, fin - 1);
+	}
+
+}
